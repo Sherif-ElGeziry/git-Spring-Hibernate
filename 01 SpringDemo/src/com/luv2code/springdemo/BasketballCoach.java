@@ -48,4 +48,5 @@ public class BasketballCoach implements Coach {
 		// use my fortune service to get a fortune
 		return "Don't be shy: " + fortuneService.getFortune();
 	}
+
 }
