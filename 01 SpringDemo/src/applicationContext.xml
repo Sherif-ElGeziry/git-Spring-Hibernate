@@ -12,8 +12,12 @@
 	<property name="rootLoggerLevel" value="FINE"></property>
 	<property name="printedLoggerLevel" value="FINE"></property>
 </bean>
-	<bean id="myCoach" class="com.luv2code.springdemo.BasketballCoach"></bean>
+	<!--define the dependency--><bean id="myFortune" class="com.luv2code.springdemo.HappyFortuneService"></bean>
+	<bean id="myCoach" class="com.luv2code.springdemo.BaseballCoach"><!--setup constructor injection--><constructor-arg
+			ref="myFortune">
+</constructor-arg></bean>
 	
+
 
 </beans>
 

@@ -6,4 +6,10 @@ public class BasketballCoach implements Coach {
 	public String getDailyWorkout() {
 		return "Shoot 300 3pts total from 5 positions";
 	}
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
