@@ -11,6 +11,13 @@ public class SetterDemoApp {
 
 		// retrieve bean from spring container
 		BasketballCoach theCoach = context.getBean("myBasketballCoach", BasketballCoach.class);
+		BasketballCoach alphaCoach = context.getBean("myBasketballCoach", BasketballCoach.class);
+
+		boolean result = (theCoach == alphaCoach);
+		System.out.println("\nPointing to the same object: " + result);
+
+		System.out.println("\nMemory location for theCoach: " + theCoach);
+		System.out.println("\nMemory location for alphaCoach: " + alphaCoach + "\n");
 
 		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());

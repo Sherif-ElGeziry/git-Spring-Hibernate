@@ -10,19 +10,12 @@
     <!-- Define your beans here --><bean id="myLoggerConfig" class="com.luv2code.springdemo.MyLoggerConfig" init-method="initLogger">
 	<property name="rootLoggerLevel" value="FINE"></property>
 	<property name="printedLoggerLevel" value="FINE"></property>
-</bean><!--load the properties file: sport.properties--><context:property-placeholder
-    	location="classpath:sport.properties" />
+</bean>
     
 	<!--define the dependency--><bean id="myFortuneService" class="com.luv2code.springdemo.RandomFortuneService"></bean>
-	<bean id="myCoach" class="com.luv2code.springdemo.TrackCoach"><!--setup constructor injection--><constructor-arg
-			ref="myFortuneService">
-</constructor-arg></bean>
-	<bean id="myBasketballCoach"
-		class="com.luv2code.springdemo.BasketballCoach" scope="prototype"><!--setup setter injection-->
-		<property name="fortuneService" ref="myFortuneService">
-		</property><!--inject literal values-->
-		<property name="emailAddress" value="${foo.email}"></property>
-		<property name="team" value="${foo.team}"></property>
+	<bean id="myCoach" class="com.luv2code.springdemo.TrackCoach"
+		init-method="doMyStartupStuff" destroy-method="doMyCleanupStuff"><!--setup constructor injection-->
+		<constructor-arg ref="myFortuneService"></constructor-arg>
 	</bean>
 
 
