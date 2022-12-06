@@ -12,7 +12,7 @@
 	<property name="rootLoggerLevel" value="FINE"></property>
 	<property name="printedLoggerLevel" value="FINE"></property>
 </bean>
-	<bean id="myCoach" class="com.luv2code.springdemo.BaseballCoach"></bean>
+	<bean id="myCoach" class="com.luv2code.springdemo.BasketballCoach"></bean>
 	
 
 </beans>
