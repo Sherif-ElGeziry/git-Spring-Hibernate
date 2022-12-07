@@ -8,19 +8,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class RandomFortuneService implements FortuneService {
 
 	// create an array of strings
-	private String fileName = "C:/Users/scs/git/git-Spring-Hibernate/02 SpringDemoAnnotations/src/fortuneData.txt";
+	// private String fileName = "/02 SpringDemoAnnotations/src/fortuneData.txt";
+	private String fileName = "fortuneData.txt";
 	private List<String> theFortunes;
 
 	// create a random number generator
 	private Random myRandom = new Random();
 
 	public RandomFortuneService() {
+		System.out.println(">> FileFortuneService: inside default constructor");
+	}
+
+	@PostConstruct
+	private void loadTheFortunesFile() {
+
+		System.out.println(">> FileFortuneService: inside loadTheFortunesFile method");
+
 		File theFile = new File(fileName);
 
 		System.out.println("Reading fortunes from file: " + theFile);
