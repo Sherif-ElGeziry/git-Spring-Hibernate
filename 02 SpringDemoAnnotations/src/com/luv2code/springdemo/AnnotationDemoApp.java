@@ -13,7 +13,8 @@ public class AnnotationDemoApp {
 		Coach theCoach = context.getBean("thatSillyCoach", Coach.class);
 
 		// call a method on the bean
-		theCoach.getDailyWorkout();
+		System.out.println(theCoach.getDailyWorkout());
+		;
 
 		// close the context
 		context.close();
