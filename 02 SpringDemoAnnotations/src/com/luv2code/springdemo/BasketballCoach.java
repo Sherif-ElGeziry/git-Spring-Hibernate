@@ -3,25 +3,23 @@ package com.luv2code.springdemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-// @Component("thatSillyCoach") // removed explicit bean id and let default name instead "tennisCoach" (lower case first letter)
 @Component
-public class TennisCoach implements Coach {
+public class BasketballCoach implements Coach {
 
 	private FortuneService fortuneService;
 
 	@Autowired
-	public TennisCoach(FortuneService fortuneService) {
+	public BasketballCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
 
 	@Override
 	public String getDailyWorkout() {
-		return "Practice your backhand volley!";
+		return "Shoot 300 3pts total from 5 positions";
 	}
 
 	@Override
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
 	}
-
 }
