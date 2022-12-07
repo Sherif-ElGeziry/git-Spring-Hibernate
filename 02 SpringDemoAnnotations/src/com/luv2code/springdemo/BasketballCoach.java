@@ -1,6 +1,7 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,6 +21,7 @@ public class BasketballCoach implements Coach {
 
 	// define a setter method
 	@Autowired
+	@Qualifier("randomFortuneService")
 	public void setFortuneService(FortuneService fortuneService) {
 		System.out.println(">> BasketballCoach: inside setFortuneService method!");
 		this.fortuneService = fortuneService;
